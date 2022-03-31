@@ -1,0 +1,200 @@
+
+.b-select {
+  //color: #ACACAC;
+  line-height: 32px;
+  background-color: #fff;
+  position: relative;
+  &:focus {
+    outline: 0;
+  }
+  .b-selected-item {
+    padding: 0 10px;
+    border-bottom: solid 1px #ACACAC;
+    background-color: inherit;
+    position: relative;
+    cursor: pointer;
+    @include user-select(none);
+    @include text-overflow();
+    &:after {
+      border: solid 7px transparent;
+      border-top-color: #ACACAC;
+      border-bottom: 0;
+      position: absolute;
+      bottom: 2px;
+      right: 0;
+      content: '';
+      @include rotate(-45deg);
+      @include transform-origin(top right);
+    }
+    input.form-control {
+      outline: none;
+      border-radius: 0;
+      border: 0;
+      box-shadow: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &:not(.selected) .b-selected-item{
+    color: $input-color-placeholder;
+  }
+  ul {
+    position: absolute;
+    top: 98%;
+    right: 0;
+    left: 0;
+    min-width: 100px;
+    background-color: inherit;
+    //display: none;
+    z-index: 350;
+    border-radius: 3px;
+    border: solid 1px $input-border-focus;
+    max-height: 95px;
+    overflow: auto;
+    visibility: hidden;
+    opacity: 0;
+    @include scaleY(0);
+    @include transition(all 0.3s ease);
+    @include transform-origin(top);
+    li {
+      display: block;
+      padding: 8px 10px;
+      position: relative;
+      cursor: pointer;
+      line-height: 20px;
+      &:not(:last-child):after {
+        position: absolute;
+        display: block;
+        left: 10px;
+        right: 10px;
+        height: 0;
+        bottom: 0;
+        border-bottom: solid 1px #dddddd;
+        content: '';
+        @include transition(all 0.2s ease);
+      }
+      &:not(.disabled):hover {
+        background-color: $brand-primary;
+        color: #fff;
+        //&:after {  border-bottom-color: $brand-primary;  }
+      }
+      &.disabled {
+        cursor: $cursor-disabled;
+        color: #ccc;
+        background-color: #f8f8f8;
+      }
+      &.selected {
+        color: $brand-primary;
+        //&:after {  border-bottom-color: $brand-primary;  }
+      }
+      &.is-hover:not(.disabled) {
+        background-color: #eee;
+      }
+    }
+    //=== li
+  }
+  //=== ul
+
+  &.open {
+    color: #090909;
+    .b-selected-item {
+      //box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 2px 1px fade_out($brand-primary, 0.7);
+      border-color: $input-border-focus !important;
+      &:after {  border-top-color: $brand-primary !important;  }
+      &:before {  border-bottom-color: $brand-primary !important;  }
+    }
+    ul {
+      box-shadow: 0 1px 3px 0 fade_out($brand-primary, 0.6);
+      //display: block;
+      visibility: visible;
+      opacity: 1;
+      @include scaleY(1);
+      li {
+        &:not(:last-child):after {  }
+        &:not(.disabled):hover { &:after {  } }
+        &.disabled {  }
+      }
+      //=== li
+    }
+    //=== ul
+  }
+  //=== open
+
+  &.disabled {
+    .b-selected-item {
+      cursor: $cursor-disabled;
+      color: #ccc;
+      background-color: #f8f8f8;
+    }
+  }
+  //=== open
+
+  &.b-select-soft {
+    font-size: 12px;
+    border-radius: 4px;
+    .b-selected-item {
+      padding: 0 14px 0 30px;
+      border: solid 1px #ccc;
+      border-radius: 4px;
+      line-height: 36px;
+      height: 36px;
+      &:after {
+        border: solid 4px transparent;
+        border-top-color: #ACACAC;
+        bottom: auto;
+        right: auto;
+        left: 10px;
+        top: 18px;
+        @include rotate(0deg);
+      }
+      &:before {
+        position: absolute;
+        content: '';
+        border: solid 4px transparent;
+        border-bottom-color: #ACACAC;
+        bottom: 18px;
+        left: 10px;
+      }
+    } //=== b-selected-item
+    ul {
+      li {
+        //line-height: 34px;
+        //&:after {  display: none;  }
+        &:not(.disabled):hover {
+          background-color: #eee;
+          color: inherit;
+        }
+        &.disabled {
+          cursor: $cursor-disabled;
+          color: #ccc;
+          background-color: #f8f8f8;
+        }
+        &.selected {  color: $brand-primary;  }
+        &:first-child {
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+        }
+        &:last-child {
+          border-bottom-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+        }
+      } //=== li
+    } //=== ul
+  } //=== b-select-soft
+
+  &.on-top {
+    ul {
+      top: auto;
+      bottom: 100%;
+    }
+  }
+  &.loading {
+    .b-selected-item {
+      &:before, &:after {
+        opacity: 0;
+      }
+    }
+  }
+}
+//=== b-select

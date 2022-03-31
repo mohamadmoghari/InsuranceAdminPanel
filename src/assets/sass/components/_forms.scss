@@ -1,0 +1,102 @@
+//=========== checkbox ========
+[type="checkbox"] {
+  &:not(:checked),
+  &:checked {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  &:not(:checked) + label,
+  &:checked + label {
+    position: relative;
+    padding-right: 1.95em;
+    cursor: pointer;
+    @include user-select(none);
+  }
+
+  &:not(:checked) + label:before,
+  &:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 1.6em;
+    height: 1.6em;
+    border: 1px solid #a4a4a6;
+    background: #26272D;
+    border-radius: 3px;
+  }
+
+  &:not(:checked) + label:after,
+  &:checked + label:after {
+    content: '✔';
+    position: absolute;
+    top: 0.05em;
+    right: -0.15em;
+    font-size: 1.9em;
+    line-height: 0.8;
+    color: $brand-primary;
+    transition: all .2s;
+  }
+
+  &:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  &:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &:disabled:not(:checked) + label:before,
+  &:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+  }
+
+  &:disabled:checked + label:after {
+    color: #999;
+  }
+
+  &:disabled + label {
+    color: #aaa;
+  }
+
+  &.style-2 {
+    &:not(:checked) + label:before,
+    &:checked + label:before {
+      width: 1.5em;
+      height: 1.5em;
+      background: #fff;
+      transition: all .2s;
+    }
+
+    &:not(:checked) + label:after,
+    &:checked + label:after {
+      @include fa();
+      content: "\f00c";
+      top: 0.55em;
+      right: 0.45em;
+      font-size: 0.8em;
+      color: #fff;
+    }
+
+    &:checked + label:before {
+      background-color: $brand-primary;
+    }
+
+    + label:empty {
+      height: 20px;
+      width: 20px;
+      padding: 0;
+      vertical-align: middle;
+    }
+  }
+}
+
+/**************************************/

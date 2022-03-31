@@ -1,0 +1,176 @@
+#app {
+  @include clearfix();
+  height: 100%;
+}
+
+.retry-screen {
+  //position: fixed;
+  //top: 0;
+  //left: 0;
+  //width: 100%;
+  //height: 100%;
+  //background-color: rgba(255, 255, 255, 0.78);
+  //text-align: center;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  //flex-direction: column;
+  > .modal-dialog {
+    text-align: center;
+    padding: 30px;
+    min-width: 300px;
+    background-color: #f55b74;
+    color: white;
+    border-radius: $border-radius-large;
+
+    .fa {
+      font-size: 5em;
+      line-height: 65px;
+    }
+
+    p {
+      font-size: 12px;
+      margin: 0 0 30px;
+    }
+
+    .btn {
+      border-radius: 20px;
+      border: none;
+      background-color: white;
+      color: #f55b74;
+    }
+  }
+}
+
+//====================
+//       App
+//====================
+.be-content {
+  overflow-x: hidden;
+}
+
+.page-404 {
+  padding: 0 !important;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.router-base {
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  width: 100%;
+}
+
+.scale-leave {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.scale-leave-active {
+  opacity: 0;
+  transform: scale(0.95, 0.95);
+  overflow: hidden;
+}
+
+.scale-enter {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.scale-enter-active {
+  opacity: 0;
+  transform: scale(0.95, 0.95);
+}
+
+.scale-enter-to {
+  height: 0;
+  overflow: hidden;
+}
+
+
+.slide-left-leave, .slide-left-enter {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-left-leave-active, .slide-left-enter-active {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.slide-left-enter-to, .slide-left-enter-active {
+  position: absolute;
+  top: 0;
+}
+
+.slide-up-leave, .slide-up-enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-up-leave-active, .slide-up-enter-active {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.slide-down-leave, .slide-down-enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-down-leave-active, .slide-down-enter-active {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.slide-right-leave, .slide-right-enter {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right-leave-active, .slide-right-enter-active {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+
+.app-scale-leave, .app-scale-enter {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.app-scale-leave-active, .app-scale-enter-active {
+  opacity: 0;
+  transform: scale(0.9, 0.9);
+}
+
+.app-scale-enter-to, .app-scale-enter-active {
+  position: absolute;
+  top: 0;
+}
+
+
+#header, #footer, #sidebar {
+  transition: opacity 0.2s ease-out, transform 0.3s ease-out;
+}
+
+.fade-app-leave-active {
+  opacity: 0;
+  overflow: hidden;
+}
+
+.fade-app-leave, .fade-app-enter {
+  opacity: 1;
+}
+
+.fade-app-enter-active {
+  opacity: 0;
+}
+
+.fade-app-enter-to {
+  height: 0;
+  overflow: hidden;
+}

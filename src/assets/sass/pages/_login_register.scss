@@ -1,0 +1,58 @@
+.login-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/static/login-bg.jpg') no-repeat fixed top left;
+  background-size: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.login-register-page {
+  padding-right: 0 !important;
+  display: block !important;
+  @media (min-width: $screen-sm-min) {
+    //background: url("../img/login-bg.jpg") no-repeat fixed top left;
+    //background-size: cover;
+  }
+}
+
+.login-register-container {
+
+}
+
+.or-divider {
+  border-top: solid 1px #cdcdcd;
+  color: #b0b0b0;
+  position: relative;
+  &:after {
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    @include translate(-50%, -50%);
+    content: 'یا';
+    background-color: #fff;
+    display: inline-block;
+    padding: 0 2px;
+    font-size: 10px;
+  }
+}
+
+.divider {
+  border-top: solid 1px #e5e5e5;
+}
+
+.holder-form-login-element {
+  width: 630px;
+  border-radius: 10px;
+  height: auto !important;
+  margin-top: 75px;
+  .login-inner{
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px 10px 0 0;
+    padding: 50px 50px 50px;
+  }
+}

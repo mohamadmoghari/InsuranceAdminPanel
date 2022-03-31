@@ -1,0 +1,21 @@
+* {
+  @include box-sizing(border-box);
+}
+
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  direction: $direction;
+  outline: unset !important;
+}
+
+body {
+  font-family: $dir-mode-font-family;
+  background-color: $body-custom;
+  outline: unset !important;
+}

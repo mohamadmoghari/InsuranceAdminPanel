@@ -1,0 +1,21 @@
+.speed-bar {
+  background-color: rgba(0, 0, 0, 0.03);
+  width: 100%;
+  font-size: 11px;
+  ul {
+    @include inline-list-table(25px, #777, transparent, 3px);
+    a {
+      color: #979797;
+    }
+    .fa {
+      font-size: 13px;
+    }
+    li:not(:last-child) {
+      a:after {
+        @include fa(13px, 25px);
+        content: "\f104";
+        margin-right: 6px;
+      }
+    }
+  }
+}

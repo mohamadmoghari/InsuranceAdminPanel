@@ -1,0 +1,27 @@
+@import 'font';
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "mixins";
+@import "./components/utilities";
+@import "./components/transitions";
+@import "./components/forms";
+@import "./components/loaders";
+@import "./components/b_select";
+//BASE
+@import 'inc/app';
+@import "inc/sidebar";
+@import "inc/main";
+@import "inc/speedbar";
+@import "inc/header";
+@import 'components/utilities';
+@import 'components/loaders';
+@import 'components/forms';
+@import '../custom-icon/css/ic';
+@import '_helpers';
+// =========== FOOTER =============
+@import "./inc/footer";
+@import "./inc/tables";
+//Page
+@import "pages/login_register";
+@import "pages/document_registeration";
+

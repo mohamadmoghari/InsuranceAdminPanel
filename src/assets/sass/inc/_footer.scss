@@ -1,0 +1,49 @@
+#footer {
+  line-height: $footer-height - 30;
+  text-align: center;
+  padding: 15px 30px;
+  color: $text-muted;
+  background-color: #fff;
+  font-size: 11px;
+  margin-top: 15px;
+  @include clearfix();
+  .download-app {
+    float: left;
+    img {
+      height: $footer-height - 30;
+      vertical-align: middle;
+    }
+  }
+  .socials {
+    // $height: 50px, $hover-color: $brand-primary, $hover-bg: $nav-link-hover-bg, $padding: $padding-base-horizontal, $el:'a'
+    float: left;
+    margin-left: 10px;
+    li {
+      a {
+        color: #6a6a6a;
+        font-size: 18px;
+        img {
+          vertical-align: middle;
+          width: 20px;
+        }
+      }
+    }
+    @include inline-list-table(30px, $brand-primary, transparent, 10px, "a");
+  }
+  @media (min-width: $sidebar-show-breakpoint) {
+    right: $sidebar-width;
+  }
+  @media (min-width: $sidebar-show-breakpoint + 1) and (max-width: $screen-md-max) {
+    right: $sidebar-width-md;
+  }
+  @media (max-width: 500px) {
+    .download-app {
+      float: none;
+      margin: 0 auto 10px;
+    }
+    .socials {
+      float: none;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+//============ POPUP ==============//
+.popup-enter-active,
+.popup-leave-active {
+  //opacity: 1;
+  //@include transform(scale(1, 1));
+  @include transition(all .4s cubic-bezier(0.25, 0.1, 0.17, 1.84));
+}
+.popup-leave-to,
+.popup-enter {
+  opacity: 0;
+  @include transform(scale(.5, .5));
+}
+
+//============ zoom-out-in ==============//
+.zoom-out-in-enter-active,
+.zoom-out-in-leave-active {
+  @include transition(all .2s ease-out);
+}
+.zoom-out-in-leave-to,
+.zoom-out-in-enter {
+  opacity: 0;
+  @include transform(scale(.8, .8));
+}
+
+//============ fade ==============//
+.fade-enter-active,
+.fade-leave-active {
+  //opacity: 1;
+  @include transition(opacity .4s);
+}
+.fade-leave-to,
+.fade-enter {
+  opacity: 0;
+}
+
+//.table-options-wrapper.has-transition > div {
+//  transition: transform  0.3s ease-out !important;
+//}
+//.scale-in-leave-active,
+//.scale-in-enter-active {
+//  @include transform( scale(0.0, 0.0) !important);
+//  position: absolute !important;
+//}
+//.scale-in-leave-active {
+//  overflow: hidden;
+//}

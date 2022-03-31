@@ -1,0 +1,26 @@
+
+.ic-message:before { content: '\e802'; } /* '' */
+.ic-archive:before { content: '\e803'; } /* '' */
+.ic-share:before { content: '\e804'; } /* '' */
+.ic-clock-arrow:before { content: '\e805'; } /* '' */
+.ic-credit-card:before { content: '\e806'; } /* '' */
+.ic-credit-card-hand:before { content: '\e807'; } /* '' */
+.ic-clock:before { content: '\e808'; } /* '' */
+.ic-settings:before { content: '\e809'; } /* '' */
+.ic-message-ticket:before { content: '\e80a'; } /* '' */
+.ic-wallet:before { content: '\e80b'; } /* '' */
+.ic-output:before { content: '\e80c'; } /* '' */
+.ic-calendar:before { content: '\e80d'; } /* '' */
+.ic-calendar-clock:before { content: '\e80e'; } /* '' */
+.ic-tools:before { content: '\e80f'; } /* '' */
+.ic-user-not-allowed:before { content: '\e810'; } /* '' */
+.ic-clock-arrow-2:before { content: '\e811'; } /* '' */
+.ic-chart:before { content: '\e812'; } /* '' */
+.ic-calculator:before { content: '\e813'; } /* '' */
+.ic-calendar-face:before { content: '\e814'; } /* '' */
+.ic-hands:before { content: '\e815'; } /* '' */
+.ic-day-night:before { content: '\e817'; } /* '' */
+.ic-bell:before { content: '\e818'; } /* '' */
+.ic-user-person:before { content: '\e819'; } /* '' */
+.ic-users:before { content: '\e81a'; } /* '' */
+.ic-user-commercial:before { content: '\e81b'; } /* '' */
